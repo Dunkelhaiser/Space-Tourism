@@ -1,0 +1,106 @@
+@use "../../scss/abstract/mixins" as *;
+@use "../../scss/abstract/screen-queries" as *;
+
+.header {
+    @include flex($gap: 1rem, $direction: row, $justify: space-between);
+
+    position: relative;
+    margin: 2rem;
+
+    div[aria-label="Menu"] {
+        display: none;
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include respond-tablet-landscape {
+        justify-content: space-between;
+        margin: 0;
+    }
+    /* stylelint-disable-next-line order/order */
+    @include respond-phone {
+        div[aria-label="Menu"] {
+            position: absolute;
+            z-index: 1000000;
+            top: 2rem;
+            right: 1rem;
+
+            display: flex;
+        }
+    }
+}
+
+.logo {
+    margin: 1.5rem;
+}
+
+.navigation {
+    @include flex($gap: 8rem, $direction: row);
+
+    @include respond-tablet-landscape {
+        gap: clamp(1.5rem, 5vw, 3.5rem);
+        padding: 0 2rem;
+
+        a span {
+            display: none;
+        }
+    }
+
+    @include respond-phone {
+        @include flex($direction: column);
+
+        position: fixed;
+        z-index: 9999;
+        inset: 0 0 0 20%;
+        transform: translateX(100%);
+
+        padding: 15vh 2rem;
+
+        transition: all 0.5s ease-in-out;
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    padding: 0 7rem;
+    list-style: none;
+    background: hsl(var(--white) / 5%);
+    backdrop-filter: blur(2rem);
+
+    a {
+        @include respond-phone {
+            padding: 1rem 0;
+            border: 0;
+        }
+
+        cursor: pointer;
+
+        display: inline-block;
+
+        padding: 2rem 0;
+
+        font-family: var(--sans-condensed);
+        color: var(--white);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-l);
+
+        border-bottom: 0.2rem solid hsl(var(--white) / 0%);
+
+        transition: border 0.1s linear;
+
+        & > span {
+            margin-right: 0.5em;
+            font-weight: 700;
+        }
+
+        &:hover,
+        &:focus-visible {
+            border-color: hsl(var(--white) / 50%);
+        }
+
+        &.active {
+            border-color: hsl(var(--white) / 100%);
+        }
+    }
+}
