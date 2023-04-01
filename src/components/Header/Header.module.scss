@@ -97,6 +97,10 @@
 
         transition: all 0.5s ease-in-out;
 
+        a span {
+            display: inline;
+        }
+
         &.active {
             transform: translateX(0);
         }

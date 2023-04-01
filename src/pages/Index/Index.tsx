@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import MainButton from "../../components/MainButton/MainButton";
 import IndexStyles from "./Index.module.scss";
 
 const Index = () => {
+    const navigate = useNavigate();
     return (
         <Layout className={IndexStyles.hero}>
             <section>
@@ -14,7 +16,7 @@ const Index = () => {
                     the edge of it. Well sit back, and relax because we&apos;ll give you a truly out of this world experience!
                 </p>
             </section>
-            <MainButton label="Explore" />
+            <MainButton label="Explore" onClick={() => navigate("/destination")} />
         </Layout>
     );
 };

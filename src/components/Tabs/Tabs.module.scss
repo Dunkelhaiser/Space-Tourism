@@ -1,0 +1,124 @@
+@use "../../scss/abstract/mixins" as *;
+@use "../../scss/abstract/screen-queries" as *;
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14rem;
+
+    img {
+        place-self: end;
+
+        @media ($tablet) {
+            place-self: center;
+            max-width: 55%;
+        }
+
+        @media ($phone) {
+            max-width: 60%;
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 2rem;
+
+        font-family: var(--sans-condensed);
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-m);
+        list-style: none;
+
+        li {
+            cursor: pointer;
+
+            padding: 0 0 0.75rem;
+
+            font-size: var(--size-7);
+            color: hsl(var(--light));
+
+            border: 0;
+            border-bottom: 0.2rem solid hsl(var(--white) / 0%);
+
+            &:hover,
+            &:focus-visible {
+                border-color: hsl(var(--white) / 50%);
+            }
+
+            &.active {
+                color: hsl(var(--white) / 100%);
+                border-color: hsl(var(--white) / 100%);
+            }
+        }
+
+        @media ($tablet) {
+            justify-content: center;
+        }
+    }
+
+    h2 {
+        font-family: var(--serif);
+        font-size: var(--size-2);
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: var(--size-6);
+        line-height: 32px;
+        color: hsl(var(--light));
+
+        &::after {
+            content: "";
+
+            display: block;
+
+            width: 100%;
+            height: 2px;
+            margin: 3.375rem 0 1.75rem;
+
+            background-color: hsl(var(--light) / 10%);
+
+            @media ($tablet) {
+                margin: 2rem 0;
+            }
+        }
+        @media ($tablet) {
+            max-width: 60ch;
+        }
+    }
+
+    h3 {
+        font-family: var(--sans-condensed);
+        font-size: var(--size-8);
+        color: hsl(var(--light));
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-m);
+    }
+
+    .section span {
+        font-family: var(--serif);
+        font-size: 1.75rem;
+        text-transform: uppercase;
+    }
+
+    .section {
+        @include flex($gap: 1rem, $direction: row, $justify: space-between);
+
+        @media ($phone) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .container {
+        @media ($tablet) {
+            @include flex($gap: 1.25rem, $align: center);
+
+            padding-bottom: 2rem;
+        }
+    }
+
+    @media ($tablet) {
+        grid-template-columns: 1fr;
+        gap: 1.625rem;
+    }
+}
