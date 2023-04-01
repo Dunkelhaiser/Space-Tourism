@@ -1,0 +1,74 @@
+@use "../../scss/abstract/screen-queries" as *;
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: end;
+    justify-items: end;
+
+    height: 100%;
+    padding: 0 5rem;
+    padding-bottom: 5rem;
+
+    color: hsl(var(--light));
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-image: url("../../assets/home/background-home-desktop.jpg");
+        background-position: top;
+        background-size: cover;
+
+        @media ($tablet) {
+            background-image: url("../../assets/home/background-home-tablet.jpg");
+        }
+        @media ($phone) {
+            background-image: url("../../assets/home/background-home-mobile.jpg");
+        }
+    }
+
+    section {
+        justify-self: start;
+    }
+
+    h1 {
+        font-family: var(--sans-condensed);
+        font-size: var(--size-5);
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-l);
+
+        span {
+            display: block;
+            font-family: var(--serif);
+            font-size: var(--size-1);
+            color: hsl(var(--white));
+        }
+    }
+
+    & > * {
+        max-width: 55ch;
+    }
+
+    @media ($tablet) {
+        grid-template-columns: 1fr;
+        place-items: center;
+        padding: 2rem;
+        text-align: center;
+
+        section {
+            justify-self: inherit;
+        }
+    }
+
+    @media ($phone) {
+        padding: 0 2rem;
+    }
+}

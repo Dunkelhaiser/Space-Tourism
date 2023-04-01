@@ -1,12 +1,13 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header/Header";
+import Header from "../../components/Header/Header";
+import WrapperStyles from "./Wrapper.module.scss";
 
 const Wrapper = () => {
     return (
         <>
             <Header />
-            <main>
+            <main className={WrapperStyles.main}>
                 <Suspense fallback={<h1>Loading...</h1>}>
                     <Outlet />
                 </Suspense>

@@ -1,0 +1,11 @@
+@use "../../scss/abstract/screen-queries" as *;
+
+.main {
+    height: 1px;
+    min-height: calc(100vh - 96px - 2rem);
+
+    /* stylelint-disable-next-line order/order */
+    @media ($tablet) {
+        min-height: calc(100vh - 96px);
+    }
+}

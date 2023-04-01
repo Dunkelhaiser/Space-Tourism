@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
-import Index from "./pages/Index";
-import Wrapper from "./pages/Wrapper";
+import Index from "./pages/Index/Index";
+import Wrapper from "./pages/Wrapper/Wrapper";
 import "./scss/styles.scss";
 
 const router = createBrowserRouter(
