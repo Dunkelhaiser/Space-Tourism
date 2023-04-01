@@ -13,22 +13,38 @@ const Header: React.FC = () => {
             <nav id="navigation">
                 <ul className={`${HeaderStyles.navigation} ${expanded ? HeaderStyles.active : ""}`}>
                     <li>
-                        <NavLink to="/" className={(navData) => (navData.isActive ? HeaderStyles.active : "")}>
+                        <NavLink
+                            to="/"
+                            className={(navData) => (navData.isActive ? HeaderStyles.active : "")}
+                            onClick={() => setExpanded(false)}
+                        >
                             <span>00</span>Home
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/destination" className={(navData) => (navData.isActive ? HeaderStyles.active : "")}>
+                        <NavLink
+                            to="/destination"
+                            className={(navData) => (navData.isActive ? HeaderStyles.active : "")}
+                            onClick={() => setExpanded(false)}
+                        >
                             <span>01</span>Destination
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/crew" className={(navData) => (navData.isActive ? HeaderStyles.active : "")}>
+                        <NavLink
+                            to="/crew"
+                            className={(navData) => (navData.isActive ? HeaderStyles.active : "")}
+                            onClick={() => setExpanded(false)}
+                        >
                             <span>02</span>Crew
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/technology" className={(navData) => (navData.isActive ? HeaderStyles.active : "")}>
+                        <NavLink
+                            to="/technology"
+                            className={(navData) => (navData.isActive ? HeaderStyles.active : "")}
+                            onClick={() => setExpanded(false)}
+                        >
                             <span>03</span>Technology
                         </NavLink>
                     </li>

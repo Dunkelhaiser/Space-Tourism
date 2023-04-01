@@ -23,6 +23,8 @@
         background-size: cover;
 
         @media ($tablet) {
+            right: 0;
+            left: -2rem;
             background-image: url("../../assets/destination/background-destination-tablet.jpg");
         }
         @media ($phone) {
@@ -50,11 +52,6 @@
         padding: 2rem;
         text-align: center;
 
-        &::before {
-            right: 0;
-            left: -2rem;
-        }
-
         h1 {
             place-self: start;
         }
@@ -63,5 +60,9 @@
     @media ($phone) {
         gap: 2rem;
         padding: 0 2rem;
+
+        h1 {
+            place-self: center;
+        }
     }
 }
