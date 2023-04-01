@@ -11,12 +11,10 @@
         display: none;
     }
 
-    /* stylelint-disable-next-line order/order */
     @media ($tablet) {
         justify-content: space-between;
         margin: 0;
     }
-    /* stylelint-disable-next-line order/order */
     @media ($phone) {
         div[aria-label="Menu"] {
             position: absolute;

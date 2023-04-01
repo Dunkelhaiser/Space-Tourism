@@ -2,7 +2,7 @@
 
 .hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     align-items: end;
     justify-items: end;
@@ -29,6 +29,7 @@
 
         @media ($tablet) {
             background-image: url("../../assets/home/background-home-tablet.jpg");
+            background-position: center;
         }
         @media ($phone) {
             background-image: url("../../assets/home/background-home-mobile.jpg");
@@ -46,7 +47,6 @@
         letter-spacing: var(--spacing-l);
 
         span {
-            display: block;
             font-family: var(--serif);
             font-size: var(--size-1);
             color: hsl(var(--white));
