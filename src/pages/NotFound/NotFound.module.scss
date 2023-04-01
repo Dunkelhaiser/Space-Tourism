@@ -1,0 +1,33 @@
+@use "../../scss/abstract/screen-queries" as *;
+
+.main {
+    height: 100vh;
+    background-image: url("../../assets/home/background-home-desktop.jpg");
+    background-position: top;
+    background-size: cover;
+
+    @media ($tablet) {
+        background-image: url("../../assets/home/background-home-tablet.jpg");
+        background-position: center;
+    }
+    @media ($phone) {
+        background-image: url("../../assets/home/background-home-mobile.jpg");
+    }
+}
+
+.not_found {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 2rem;
+
+    h1 {
+        max-width: 50ch;
+
+        font-family: var(--sans-condensed);
+        font-size: var(--size-5);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-l);
+    }
+}

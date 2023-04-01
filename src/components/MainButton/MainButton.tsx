@@ -5,7 +5,11 @@ interface Props {
     onClick?: () => void;
 }
 
-const MainButton: React.FC<Props> = ({ label }) => {
-    return <button className={ButtonStyles.button}>{label}</button>;
+const MainButton: React.FC<Props> = ({ label, onClick }) => {
+    return (
+        <button className={ButtonStyles.button} onClick={onClick}>
+            {label}
+        </button>
+    );
 };
 export default MainButton;
