@@ -1,8 +1,10 @@
 @use "../../scss/abstract/screen-queries" as *;
 
 .main {
-    height: 100vh;
     overflow: hidden;
+
+    height: 100vh;
+
     background-image: url("../../assets/home/background-home-desktop.jpg");
     background-position: top;
     background-size: cover;
