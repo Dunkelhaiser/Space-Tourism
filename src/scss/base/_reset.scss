@@ -57,6 +57,7 @@ select:-webkit-autofill:focus {
 }
 
 ::-webkit-scrollbar {
+    display: none;
     width: 3px;
 }
 

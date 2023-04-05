@@ -1,0 +1,125 @@
+@use "../../scss/abstract/mixins" as *;
+@use "../../scss/abstract/screen-queries" as *;
+
+.dot_nav {
+    margin-top: 5rem;
+
+    .img {
+        position: absolute;
+        right: 10rem;
+        bottom: 0;
+        @media ($tablet) {
+            position: static;
+            margin: auto;
+        }
+
+        @media ($phone) {
+            width: 60%;
+            margin: auto;
+            border-bottom: 2px solid hsl(var(--white) / 20%);
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 1.5rem;
+
+        font-family: var(--sans-condensed);
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-m);
+        list-style: none;
+
+        li {
+            button {
+                cursor: pointer;
+
+                width: 15px;
+                height: 15px;
+
+                background-color: hsl(var(--white) / 15%);
+                border: none;
+                border-radius: 50%;
+
+                &:hover,
+                &:focus-visible {
+                    background-color: hsl(var(--white) / 50%);
+                }
+
+                &.active {
+                    background-color: hsl(var(--white) / 100%);
+                }
+            }
+        }
+
+        @media ($tablet) {
+            justify-content: center;
+        }
+    }
+
+    h2 {
+        font-family: var(--serif);
+        font-size: var(--size-3);
+        text-transform: uppercase;
+    }
+
+    .position {
+        font-family: var(--serif);
+        font-size: var(--size-4);
+        color: hsl(var(--white) / 50%);
+        text-transform: uppercase;
+    }
+
+    p {
+        max-width: 40%;
+        margin-top: 1.5rem;
+
+        font-size: var(--size-6);
+        line-height: 2rem;
+        color: hsl(var(--light));
+
+        @media ($tablet) {
+            max-width: 60ch;
+            margin-top: 0;
+        }
+    }
+
+    h3 {
+        font-family: var(--sans-condensed);
+        font-size: var(--size-8);
+        color: hsl(var(--light));
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-m);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 400px;
+        @media ($tablet) {
+            height: 300px;
+            padding-bottom: 2rem;
+        }
+        @media ($phone) {
+            flex-direction: column-reverse;
+            gap: 2rem;
+            justify-content: flex-start;
+
+            height: auto;
+            padding-bottom: 0;
+        }
+    }
+
+    @media ($tablet) {
+        grid-template-columns: 1fr;
+        gap: 1.625rem;
+        margin-top: 0;
+        margin-bottom: -2rem;
+    }
+
+    @media ($phone) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+}

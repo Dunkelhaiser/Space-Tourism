@@ -1,4 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import Crew from "./pages/Crew/Crew";
 import Destination from "./pages/Destination/Destination";
 import Index from "./pages/Index/Index";
 import NotFound from "./pages/NotFound/NotFound";
@@ -10,6 +11,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<Wrapper />} errorElement={<NotFound />}>
             <Route index element={<Index />} />
             <Route path="destination" element={<Destination />} />
+            <Route path="crew" element={<Crew />} />
         </Route>
     )
 );

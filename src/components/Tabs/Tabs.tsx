@@ -8,14 +8,19 @@ const Tabs: React.FC = () => {
 
     return (
         <section className={TabsStyles.tabs}>
-            <img src={data.destinations[selected].images.webp} alt="Moon" />
+            <img src={data.destinations[selected].images.webp} alt={data.destinations[selected].name} />
             <div className={TabsStyles.container}>
                 <ul>
                     {data.destinations.map((destination, i) => (
-                        <li key={uuid()} className={i === selected ? TabsStyles.active : ""}>
-                            <span onClick={() => setSelected(i)} tabIndex={0} role="button">
-                                {destination.name}
-                            </span>
+                        <li
+                            key={uuid()}
+                            className={i === selected ? TabsStyles.active : ""}
+                            onClick={() => setSelected(i)}
+                            tabIndex={0}
+                            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
+                            role="button"
+                        >
+                            {destination.name}
                         </li>
                     ))}
                 </ul>
