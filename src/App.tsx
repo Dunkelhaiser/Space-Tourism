@@ -3,6 +3,7 @@ import Crew from "./pages/Crew/Crew";
 import Destination from "./pages/Destination/Destination";
 import Index from "./pages/Index/Index";
 import NotFound from "./pages/NotFound/NotFound";
+import Technology from "./pages/Technology/Technology";
 import Wrapper from "./pages/Wrapper/Wrapper";
 import "./scss/styles.scss";
 
@@ -12,6 +13,7 @@ const router = createBrowserRouter(
             <Route index element={<Index />} />
             <Route path="destination" element={<Destination />} />
             <Route path="crew" element={<Crew />} />
+            <Route path="technology" element={<Technology />} />
         </Route>
     )
 );

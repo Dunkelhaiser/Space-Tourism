@@ -1,28 +1,25 @@
 @use "../../scss/abstract/mixins" as *;
 @use "../../scss/abstract/screen-queries" as *;
 
-.dot_nav {
+.numbered_nav {
+    width: 100%;
     margin-top: 5rem;
 
     .img {
         position: absolute;
-        right: 10rem;
-        bottom: 0;
+        right: 0;
+        bottom: 2.5rem;
         @media ($tablet) {
             position: static;
+            width: 100%;
             margin: auto;
-        }
-
-        @media ($phone) {
-            width: 60%;
-            margin: auto;
-            border-bottom: 2px solid hsl(var(--white) / 20%);
         }
     }
 
     ul {
         display: flex;
-        gap: 1.5rem;
+        flex-direction: column;
+        gap: 2rem;
 
         font-family: var(--sans-condensed);
         text-transform: uppercase;
@@ -33,27 +30,41 @@
             button {
                 cursor: pointer;
 
-                width: 15px;
-                height: 15px;
+                width: 80px;
+                height: 80px;
 
-                background-color: hsl(var(--white) / 15%);
-                border: none;
+                font-family: var(--serif);
+                font-size: var(--size-4);
+
+                background-color: transparent;
+                border: 1px solid hsl(var(--white) / 20%);
                 border-radius: 50%;
 
                 transition: var(--hover);
 
                 &:hover,
                 &:focus-visible {
-                    background-color: hsl(var(--white) / 50%);
+                    border-color: hsl(var(--white) / 100%);
                 }
 
                 &.active {
+                    color: hsl(var(--dark) / 100%);
                     background-color: hsl(var(--white) / 100%);
+                }
+
+                @media ($tablet) {
+                    width: 60px;
+                    height: 60px;
+                }
+                @media ($phone) {
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
 
         @media ($tablet) {
+            flex-direction: row;
             justify-content: center;
         }
     }
@@ -65,14 +76,15 @@
     }
 
     .position {
-        font-family: var(--serif);
-        font-size: var(--size-4);
-        color: hsl(var(--white) / 50%);
+        font-family: var(--sans-condensed);
+        font-size: var(--size-7);
+        color: hsl(var(--light) / 100%);
         text-transform: uppercase;
+        letter-spacing: var(--spacing-m);
     }
 
     p {
-        max-width: 40%;
+        max-width: 444px;
         margin-top: 1.5rem;
 
         font-size: var(--size-6);
@@ -81,6 +93,7 @@
 
         @media ($tablet) {
             max-width: 60ch;
+            margin: auto;
             margin-top: 0;
         }
     }
@@ -95,26 +108,28 @@
 
     .container {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
+        gap: 5rem;
         height: 400px;
         @media ($tablet) {
+            flex-direction: column;
+            gap: 2.75rem;
             height: 300px;
             padding-bottom: 2rem;
         }
         @media ($phone) {
-            flex-direction: column-reverse;
             gap: 2rem;
             justify-content: flex-start;
-
             height: auto;
             padding-bottom: 0;
         }
     }
 
     @media ($tablet) {
-        grid-template-columns: 1fr;
-        gap: 1.625rem;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3.5rem;
+
         margin-top: 0;
         margin-bottom: -2rem;
     }
