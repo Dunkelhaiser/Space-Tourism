@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
 import MainButton from "../../components/MainButton/MainButton";
 import IndexStyles from "./Index.module.scss";
 
 const Index = () => {
     const navigate = useNavigate();
     return (
-        <Layout className={IndexStyles.hero}>
+        <section className={IndexStyles.hero}>
             <section>
                 <h1>
                     So, you want to travel to <span>Space</span>
@@ -17,7 +16,7 @@ const Index = () => {
                 </p>
             </section>
             <MainButton label="Explore" onClick={() => navigate("/destination")} />
-        </Layout>
+        </section>
     );
 };
 export default Index;

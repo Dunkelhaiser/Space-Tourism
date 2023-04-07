@@ -4,11 +4,7 @@ import Tabs from "../../components/Tabs/Tabs";
 
 const Destination = () => {
     return (
-        <Layout className={DestinationStyles.destination}>
-            <h1>
-                <span>01</span> Pick your destination
-            </h1>
-
+        <Layout className={DestinationStyles.destination} step="01" title="Pick your destination">
             <Tabs />
         </Layout>
     );

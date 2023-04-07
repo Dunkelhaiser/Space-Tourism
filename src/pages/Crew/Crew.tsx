@@ -4,10 +4,7 @@ import CrewStyles from "./Crew.module.scss";
 
 const Crew = () => {
     return (
-        <Layout className={CrewStyles.crew}>
-            <h1>
-                <span>02</span> Meet your crew
-            </h1>
+        <Layout className={CrewStyles.crew} step="02" title="Meet your crew">
             <DotNav />
         </Layout>
     );

@@ -4,10 +4,7 @@ import TechnologyStyles from "./Technology.module.scss";
 
 const Technology = () => {
     return (
-        <Layout className={TechnologyStyles.technology}>
-            <h1>
-                <span>03</span> Space launch 101
-            </h1>
+        <Layout className={TechnologyStyles.technology} step="03" title="Space launch 101">
             <NumberedNav />
         </Layout>
     );

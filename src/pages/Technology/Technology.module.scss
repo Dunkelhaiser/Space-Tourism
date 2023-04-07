@@ -1,69 +1,14 @@
 @use "../../scss/abstract/screen-queries" as *;
-@use "../../scss/abstract/mixins" as *;
 
 .technology {
-    @include flex($gap: 4rem);
-
-    min-height: calc(100vh - 96px - 2rem);
-    padding: 4.75rem 5rem;
-
     &::before {
-        content: "";
-
-        position: fixed;
-        z-index: -1;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-
         background-image: url("../../assets/technology/background-technology-desktop.jpg");
-        background-position: center;
-        background-size: cover;
 
         @media ($tablet) {
-            right: 0;
-            left: -2rem;
             background-image: url("../../assets/technology/background-technology-tablet.jpg");
         }
         @media ($phone) {
             background-image: url("../../assets/technology/background-technology-mobile.jpg");
-        }
-    }
-
-    h1 {
-        font-family: var(--sans-condensed);
-        font-size: var(--size-5);
-        color: hsl(var(--white));
-        text-transform: uppercase;
-        letter-spacing: var(--spacing-l);
-
-        span {
-            margin-right: 0.5em;
-            font-weight: 700;
-            color: hsl(var(--white) / 25%);
-        }
-    }
-
-    @media ($tablet) {
-        grid-template-columns: 1fr;
-        place-items: center;
-        padding: 0;
-        text-align: center;
-
-        h1 {
-            place-self: start;
-            padding: 2rem;
-        }
-    }
-
-    @media ($phone) {
-        gap: 2rem;
-
-        // padding: 0 2rem;
-
-        h1 {
-            place-self: center;
         }
     }
 }

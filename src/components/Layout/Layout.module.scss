@@ -1,8 +1,58 @@
 @use "../../scss/abstract/screen-queries" as *;
+@use "../../scss/abstract/mixins" as *;
 
 .layout {
-    max-width: 80rem;
-    margin: 0 auto;
+    @include flex($gap: 4rem);
 
-    // padding: 0 2em;
+    max-width: 80rem;
+    min-height: calc(100vh - 96px - 2rem);
+    margin: 0 auto;
+    padding: 4.75rem 5rem;
+
+    &::before {
+        content: "";
+
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    h1 {
+        font-family: var(--sans-condensed);
+        font-size: var(--size-5);
+        color: hsl(var(--white));
+        text-transform: uppercase;
+        letter-spacing: var(--spacing-l);
+
+        span {
+            margin-right: 0.5em;
+            font-weight: 700;
+            color: hsl(var(--white) / 25%);
+        }
+    }
+
+    @media ($tablet) {
+        place-items: center;
+        padding: 0;
+        text-align: center;
+
+        h1 {
+            place-self: start;
+            padding: 2rem;
+        }
+    }
+
+    @media ($phone) {
+        gap: 2rem;
+
+        h1 {
+            place-self: center;
+        }
+    }
 }
